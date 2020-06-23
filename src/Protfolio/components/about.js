@@ -1,10 +1,17 @@
 import React from 'react';
 import Card from './card'
-import repair from '../images/repair.svg'
-import algorithm from '../images/algorithm.svg'
-import computer from '../images/computer.svg'
-import ux from '../images/ux.svg'
+
 import { motion } from 'framer-motion'
+
+import algo from '../icons/algo.svg'
+import api from '../icons/api.svg'
+import repair from '../icons/repair.svg'
+import computer from '../icons/computer.svg'
+import ux from '../icons/ux.svg'
+import puzzle from '../icons/puzzle.svg'
+
+
+
 
 const About = () => {
     const aboutVariants = {
@@ -45,19 +52,22 @@ const About = () => {
                         </p>
                     <div className="row">
                         <div className="col-sm-12 col-lg-6">
-                            <Card icon={computer} title="Frontend Development" body="Some quick example text to build on the card title and make up" />
+                            <Card icon={computer} title="Frontend Development" body={["I can built a beautiful and scalable SPA using ", <strong>HTML,CSS</strong>, " and ", <strong>React.js</strong>]} />
                         </div>
                         <div className="col-sm-12 col-lg-6">
-                            <Card icon={repair} title="Backend Development" body="Some quick example text to build on the card title and make up" />
+                            <Card icon={repair} title="Backend  Development" body={["handle database, server, api using ", <strong> django </strong>, " and ", <strong> SQLlite </strong>]} />
                         </div>
                         <div className="col-sm-12 col-lg-6">
-                            <Card icon={algorithm} title="Algo and DS" body="uild on the card title and make up Some quick example text to b" />
+                            <Card icon={api} title="API Development" body={["develop robust REST API using ", <strong> django-rest-api </strong>]} />
                         </div>
                         <div className="col-sm-12 col-lg-6">
-                            <Card icon={ux} title="UI/UX developer" body="Some quick example text to build on the card title and make up" />
+                            <Card icon={algo} title="Algo and DS" body={["a daily problem solver in ", <strong>HackerRank</strong>, " and ", <strong>Leetcode</strong>]} />
                         </div>
                         <div className="col-sm-12 col-lg-6">
-                            <Card icon={ux} title="Graphics Designer" body="Some quick example text to build on the card title and make up" />
+                            <Card icon={ux} title="UI/UX developer" body={["minimalistic user interface designer using ", <strong>figma</strong>, " and ", <strong>framer</strong>]} />
+                        </div>
+                        <div className="col-sm-12 col-lg-6">
+                            <Card icon={puzzle} title="Graphics Designer (mm ..Hobby :))" body={[" Digital art and character design in free time using ", <strong>Illustrator</strong>]} />
                         </div>
                     </div>
                 </div>

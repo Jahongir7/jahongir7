@@ -69,6 +69,7 @@ body {
 
 .custom_container {
     padding-top: 50px;
+
 }
 
 .custom_row {
@@ -124,7 +125,7 @@ body {
 .github:hover {
     cursor: pointer;
     background-color: #F1F2F3;
-
+    color: #000
 }
 
 .email {
@@ -258,11 +259,11 @@ a:hover {
 
 /* resume */
 .resume_section {
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .resume_card_body {
-    margin-top: 20px;
+    margin-top: 15px;
 
 }
 
@@ -294,6 +295,11 @@ a:hover {
 
 }
 
+.skill_verygood {
+    width: 80%;
+
+}
+
 .skill_exp {
     width: 95%;
 }
@@ -302,7 +308,7 @@ a:hover {
     background-image: linear-gradient(to right, #00F260, #0575E6);
     border-radius: 20px;
     color: #fff;
-    padding: 2px 14px;
+    padding: 4px 14px;
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -338,6 +344,10 @@ a:hover {
     margin-bottom: 20px;
 }
 
+.project_name {
+    font-size: 17px;
+}
+
 /* .project_image {
     width: 250px;
     height: 170px;
@@ -346,9 +356,9 @@ a:hover {
 } */
 
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 991px) {
     .mainarea_custom {
-        margin-top: 30px;
+        margin: 30px 0;
     }
 }
 
@@ -386,7 +396,7 @@ a:hover {
 
 .project_image {
     border-radius: 20px;
-    border: 1px solid rgb(107, 124, 141);
+    border: 1px solid #00F260;
     width: 100%;
     height: 80%;
 

@@ -1,21 +1,28 @@
 import React from 'react';
-import python from '../images/python.svg'
+import react from '../images/react.svg'
+
 import { motion } from 'framer-motion'
+import { skill_language_store, skill_tool_store } from './skillStore'
 
-const SkillWrapper = ({ name, level }) => {
+const SkillWrapper = ({ name, level, icon }) => {
     var className = 'skill'
-    if (level === 'average')
-        className = `${className} skill_avg`
-    else if (level === 'beginner')
-        className = `${className} skill_beg`
-    else
-        className = `${className} skill_exp`
 
+    if (level === 'beg')
+        className = `${className} skill_beg`
+    if (level === 'avg')
+        className = `${className} skill_avg`
+    else if (level === 'verygood')
+        className = `${className} skill_verygood`
+    else if (level === 'exp')
+        className = `${className} skill_exp`
+    if (!icon) {
+        icon = react
+    }
     return (
         <div className="skill_wrapper">
             <div className={className}>
-                <span className="skill_name"><img src={python} alt="python" className='icon_tiny' />   {name}</span>
-                <span className='skill_level'>{level}</span>
+                <span className="skill_name"><img src={icon} alt="python" className='icon_tiny mr-2' />   {name}</span>
+                <span className='skill_level'></span>
             </div>
         </div>
     )
@@ -55,10 +62,11 @@ const Resume = () => {
                         Education
                     </div>
                     <div className="resume_card_body">
-                        <div className='resume_card_title'><h5>Academy of Technology</h5></div>
-                        <div className='resume_card_year'>2017-2021</div>
+                        <div className='resume_card_title'><h5>Computer Science Engineering</h5></div>
+                        <div className='resume_card_year'>Academy of Technology (2017-2021)</div>
                         <p className='resume_card_description'>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, asperiores.
+                            I am currently persuing B.tech in Computer Science Engineering from Academy of Technology
+                           <p>CGPA (till 5th sem) : 7.5 </p>
                         </p>
 
                     </div>
@@ -69,9 +77,9 @@ const Resume = () => {
                     </div>
                     <div className="resume_card_body">
                         <div className='resume_card_title'><h5>Freelancer</h5></div>
-                        <div className='resume_card_year'>ongoing</div>
+                        <div className='resume_card_year'>  present</div>
                         <p className='resume_card_description'>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, asperiores.
+                            I work as a parttime freelancer in fivrr and also completed some projects in local
                         </p>
 
                     </div>
@@ -83,13 +91,7 @@ const Resume = () => {
                         Language & Framework
                     </div>
                     <div className="resume_card_body">
-                        <SkillWrapper name="Python" level="expert" />
-                        <SkillWrapper name="Django" level="average" />
-                        <SkillWrapper name="Java Script" level="expert" />
-                        <SkillWrapper name="React" level="beginner" />
-                        <SkillWrapper name="HTML & CSS" level="average" />
-                        <SkillWrapper name="bootstrap 4 " level="average" />
-                        <SkillWrapper name="SQL" level="beginner" />
+                        {skill_language_store.map((skill, i) => <SkillWrapper key={i} name={skill.name} level={skill.level} icon={skill.logo} />)}
 
                     </div>
 
@@ -97,12 +99,11 @@ const Resume = () => {
                 </div>
                 <div className="col-12 col-lg-6">
                     <div className="sub_heading">
-                        Software
+                        Tools & Software
                     </div>
                     <div className="resume_card_body">
-                        <SkillWrapper name="Figma" level="average" />
-                        <SkillWrapper name="Photoshop" level="average" />
-                        <SkillWrapper name="Illustrator" level="expert" />
+                        {skill_tool_store.map((skill, i) => <SkillWrapper key={i} name={skill.name} level={skill.level} icon={skill.logo} />)}
+
 
                     </div>
                 </div>

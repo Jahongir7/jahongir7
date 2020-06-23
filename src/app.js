@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Protfolio/main.css'
 import SideBar from './Protfolio/components/sidebar'
 import Navbar from './Protfolio/components/navbar'
-import { BrowserRouter as Router, Route, useLocation, Switch } from 'react-router-dom'
+import { Route, useLocation, Switch } from 'react-router-dom'
 import About from './Protfolio/components/about'
 import Resume from './Protfolio/components/resume'
 import Projects from './Protfolio/components/projects'
@@ -10,12 +10,10 @@ import { AnimatePresence } from 'framer-motion'
 
 const App = () => {
     const location = useLocation();
-    // const [nav_heading, setNav_heading] = useState('About')
-    //const handle_nav_heading = (text) => setNav_heading(text)
     return (
         <>
 
-            <div className="container custom_container">
+            <div className="container custom_container mb-2">
                 <div className="row custom_row">
                     {/* <div className="col-1"></div> */}
                     <div className="col-sm-12 col-lg-3 ">

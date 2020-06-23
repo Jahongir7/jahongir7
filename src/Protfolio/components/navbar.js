@@ -2,12 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 const Navbar = () => {
-    const [heading, setHeading] = useState('About')
+    const [heading, setHeading] = useState('')
 
-    // useEffect(()=>{
-    //     // heading error on page referesh
-    //     setHeading()
-    // })
+    useEffect(() => {
+        // heading error on page referesh
+        var header = localStorage.getItem('nav_header')
+        header ? setHeading(header) : setHeading('About')
+    }, [setHeading])
+
+    const handleSetHeading = (header) => {
+        localStorage.setItem("nav_header", header)
+        setHeading(header)
+    }
+
     var navbarVariants = {
         initial: {
             y: '-30vh',
@@ -28,9 +35,9 @@ const Navbar = () => {
         >
             <div className="nav_heading">{heading}</div>
             <div className="navItems">
-                {heading !== 'About' && <Link to='/' ><div className="about navItem" onClick={() => setHeading('About')}>About</div></Link>}
-                {heading !== 'Projects' && <Link to='/projects' > <div className="projects navItem" onClick={() => setHeading('Projects')}>Projects</div></Link>}
-                {heading !== 'Resume' && <Link to='/resume'  > <div className="resume navItem" onClick={() => setHeading('Resume')}>Resume</div></Link>}
+                {heading !== 'About' && <Link to='/' ><div className="about navItem" onClick={() => handleSetHeading('About')}>About</div></Link>}
+                {heading !== 'Projects' && <Link to='/projects' > <div className="projects navItem" onClick={() => handleSetHeading('Projects')}>Projects</div></Link>}
+                {heading !== 'Resume' && <Link to='/resume'  > <div className="resume navItem" onClick={() => handleSetHeading('Resume')}>Resume</div></Link>}
             </div>
         </motion.div>
     );
