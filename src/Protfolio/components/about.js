@@ -4,8 +4,7 @@ import Card from "./card";
 import { motion } from "framer-motion";
 
 import algo from "../icons/algo.svg";
-import api from "../icons/api.svg";
-import repair from "../icons/repair.svg";
+
 import computer from "../icons/computer.svg";
 import ux from "../icons/ux.svg";
 import puzzle from "../icons/puzzle.svg";
