@@ -388,7 +388,7 @@ button {
   outline: none;
   border: none;
   border-radius: 30px;
-  background-color: var(--div);
+  background-color: var(--background-color);
 }
 button:focus {
   outline: none;
