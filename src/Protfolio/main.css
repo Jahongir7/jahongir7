@@ -101,7 +101,7 @@ body.dark {
   border-radius: 20px;
   height: 100%;
   padding: 25px 15px;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px var(--text-color);
 }
 
 .name {
@@ -167,7 +167,7 @@ body.dark {
   background-color: var(--div);
   border-radius: 20px;
   padding-top: 20px;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px var(--text-color);
 }
 
 /* #6E7E91 */
