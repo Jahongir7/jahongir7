@@ -70,7 +70,6 @@ const Navbar = () => {
           </Link>
         )}
       </div>
-      <DarkMode />
     </motion.div>
   );
 };
